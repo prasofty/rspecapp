@@ -50,5 +50,13 @@ group :development, :test do
   gem 'spring'
 
   gem 'faker'
+
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end

@@ -1,3 +1,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+$bg-color: #333;
+
+.test_aa {
+  height: 100px;
+  width: 200px;
+  border: 1px solid red;
+  background-color: $bg-color;
+  @include border-radius(10px);
+}
