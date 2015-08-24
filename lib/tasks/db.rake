@@ -9,7 +9,7 @@ end
 
 
 def make_products
-    20.times do |n|
+    500.times do |n|
         product_name = Faker::Commerce.product_name
         Product.create!(
             name: product_name,

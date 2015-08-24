@@ -30,6 +30,11 @@ gem 'quiet_assets'
 gem 'money-rails'
 gem 'carrierwave'
 
+
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
