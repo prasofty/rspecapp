@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  api_version(:module => "V1a", :path => {:value => "v1.0"}, :defaults => {:format => "json"}) do
+    resources :users
+  end
+  devise_for :users
   resources :products
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
