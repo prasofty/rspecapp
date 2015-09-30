@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   api_version(:module => "Api::V1a", :path => {:value => "api/v1.0"}, :defaults => {:format => "json"}) do
+    resources :products
+    resources :sessions
     resources :users
   end
   devise_for :users
