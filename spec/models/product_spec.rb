@@ -34,7 +34,10 @@ RSpec.describe Product, type: :model do
     expect([1, 2]).to include(1)
   end
 
-  it "is invalid with a duplicate name"
+  it "is invalid with a duplicate name" do
+    product = FactoryGirl.build(:product)
+    
+  end
   it "is invalid with a name less then five characters"
   it "is invalid with a description less then 100 characters"
   it "is invalid with a price as string"
