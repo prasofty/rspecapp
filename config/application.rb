@@ -24,6 +24,7 @@ module Rspecapp
     config.active_record.raise_in_transactional_callbacks = true
 
     config.generators do |g|
+      g.test_framework :rspec
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
   end

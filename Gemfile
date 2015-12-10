@@ -34,6 +34,7 @@ gem 'jwt'
 
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-ui-rails'
 
 
 # Use ActiveModel has_secure_password
