@@ -34,7 +34,7 @@ RSpec.describe ProductsController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ProductsController. Be sure to keep this updated too.
-  let(:valid_session) { login_user }
+  let(:valid_session) { }
 
   describe "GET #index" do
     it "assigns all products as @products" do
