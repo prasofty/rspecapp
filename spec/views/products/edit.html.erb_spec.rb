@@ -4,7 +4,7 @@ RSpec.describe "products/edit", type: :view do
   before(:each) do
     @product = assign(:product, Product.create!(
       :name => "MyString",
-      :description => "MyText",
+      :description => "Something " + Faker::Lorem.paragraph,
       :price => "10",
       :remote_image_url => "https://robohash.org/product.png?size=300x300"
     ))

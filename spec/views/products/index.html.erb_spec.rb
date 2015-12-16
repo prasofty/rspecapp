@@ -4,14 +4,14 @@ RSpec.describe "products/index", type: :view do
   before(:each) do
     assign(:products, [
       Product.create!(
-        :name => "Name",
-        :description => "MyText",
+        :name => "Name " + Faker::Commerce.product_name,
+        :description => "Something " + Faker::Lorem.paragraph,
         :price => "10",
         :remote_image_url => "https://robohash.org/product.png?size=300x300"
       ),
       Product.create!(
-        :name => "Name",
-        :description => "MyText",
+        :name => "Name " + Faker::Commerce.product_name,
+        :description => "Something " + Faker::Lorem.paragraph,
         :price => "10",
         :remote_image_url => "https://robohash.org/product.png?size=300x300"
       )
