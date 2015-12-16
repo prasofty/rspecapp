@@ -23,12 +23,11 @@ RSpec.describe Product, type: :model do
   it "is invalid without a price" do
     product = FactoryGirl.build(:product, price: nil)
     product.valid?
-    puts product.errors[:price]
-    expect(product.errors[:price]).to include("can't be blank")
+    expect(product.errors[:price_cents]).to include("must be greater than 0")
   end
 
   it "is invalid without a image" do
-    product = FactoryGirl.build(:product, image: nil)
+    product = FactoryGirl.build(:product, remote_image_url: nil)
     product.valid?
     expect(product.errors[:image]).to include("can't be blank")
     expect([1, 2]).to include(1)
@@ -38,16 +37,26 @@ RSpec.describe Product, type: :model do
     product = FactoryGirl.build(:product)
     
   end
-  it "is invalid with a name less then five characters"
-  it "is invalid with a description less then 100 characters"
-  it "is invalid with a price as string"
 
+  it "is invalid with a name less then five characters" do
+    product = FactoryGirl.build(:product, name:  '1234')
+    product.valid?
+    expect(product.errors[:name]).to include("is too short (minimum is 5 characters)")
+  end
 
+  it "is invalid with a description less then 100 characters" do
+    product = FactoryGirl.build(:product, description:  '1234')
+    product.valid?
+    expect(product.errors[:description]).to include("is too short (minimum is 100 characters)")
+  end
 
+  it "is invalid with a price as string" do
+    product = FactoryGirl.build(:product, price: 'asd')
+    product.valid?
+    expect(product.errors[:price]).to include("is not a number")
+  end
 
   it "adds 2 and 1 to make 3" do
     expect(2 + 1).to eq 3
   end
-
-
 end
